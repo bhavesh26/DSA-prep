@@ -1,0 +1,26 @@
+class Solution:
+    def isBalanced(self, s):
+        brace = ['(' , '[', '{' , ')' , ']', '}']
+        stack=[]
+        if(len(s)==1):
+            return False
+        for i in s:
+            if(i==')' or i==']' or i=='}'):
+                if(len(stack)==0):
+                    return False
+                index = brace.index(i)
+                element = stack.pop()
+                if(brace[index-3]!=element):
+                    return False
+            else:
+                stack.append(i)
+        if(len(stack)>=1):
+            return False
+        return True
+
+Intution and logic behind this:
+
+=> only add open brackets to stack
+=> if there is close bracket pop out the top and check whether open is matching with closing or not
+=> if there is something in stack that means its not isBalanced
+=> return true if stack is empty and no false is returned from inside
