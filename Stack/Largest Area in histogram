@@ -1,0 +1,30 @@
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        stack = []
+        area = 0
+        heights.append(0)
+        for index, value in enumerate(heights):
+            while(stack and heights[stack[-1]] > value):
+                ht = heights[stack.pop()]
+                //calcuating width is crucial so if stack is empty its index other wise top element of stack
+                width = index if not stack else index-stack[-1]-1
+                area = max(area , ht*width)
+
+            stack.append(index)
+        return area
+        
+
+=> notes:
+inorder to calcualte area i need to get previous and next smallest element
+this can be acheived using two stacks method as well
+
+pseudo code : 
+
+arr = [1,2,5,9,2,1]
+
+nse = findNse(arr)
+pse = findPse(arr)
+area = 0
+for i in range(len(arr)):
+    area = max(area , arr[i]* (nse[i]-pse[i]-1))
+return area
