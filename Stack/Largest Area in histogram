@@ -20,6 +20,7 @@ this can be acheived using two stacks method as well
 
 pseudo code : 
 
+
 arr = [1,2,5,9,2,1]
 
 nse = findNse(arr)
