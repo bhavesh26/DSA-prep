@@ -1,0 +1,20 @@
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+
+        # take transpose for right half
+        for i in range(len(matrix[0])-1):
+            for j in range(i+1 , len(matrix[0])):
+                matrix[i][j]  , matrix[j][i] = matrix[j][i] , matrix[i][j]
+        for i in range(len(matrix[0])):
+            matrix[i] = matrix[i][::-1]
+        
+
+intution
+=> take empty n*n array and map data as per need
+i , j = j , n-i-1
+=> not optimal
+
+
+what i learned:
+=> transpose ( efficient way to convert row to column)
+then take reverse to get required behaviour
