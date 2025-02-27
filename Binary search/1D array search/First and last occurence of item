@@ -1,0 +1,35 @@
+Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+
+If target is not found in the array, return [-1, -1].
+
+You must write an algorithm with O(log n) runtime complexity.
+
+code: 
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+
+        def bs(left , nums):
+            start = 0
+            end = len(nums)-1
+            index =-1
+            while(start<=end):
+                mid = int((start + end)/2)
+                if(nums[mid]<target):
+                    start = mid+1
+                elif(nums[mid]>target):
+                    end = mid-1
+                else:
+                    index = mid
+                    if(left):
+                        end = mid-1
+                    else:
+                        start = mid+1
+            return index
+        left = bs(True , nums)
+        right = bs(False, nums)
+        return [left,right]
+        
+challenges:
+where to go either right or left in case mid is target
+i didnt think of having the same element more than twice
+this is can be avoided if i run two binary search after mid is equal to target
