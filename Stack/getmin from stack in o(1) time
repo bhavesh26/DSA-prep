@@ -1,0 +1,25 @@
+class Solution:
+
+   
+    def __init__(self):
+        self.a = []  # Stack storing tuples (value, current minimum)
+    
+    def push(self, x):
+        mini = x if not self.a else min(self.a[-1][1], x)
+        self.a.append((x, mini))
+
+    def pop(self):
+        if not self.a:
+            return -1  # Handle underflow case
+        return self.a.pop()[0]  # Return the popped element
+
+    def peek(self):
+        if not self.a:
+            return -1  # Handle empty stack
+        return self.a[-1][0]
+
+    def getMin(self):
+        if not self.a:
+            return -1  # Handle empty stack
+        return self.a[-1][1]
+        
