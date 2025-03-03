@@ -1,0 +1,63 @@
+arr = [5,4,11,1,16,8]
+
+f(ind , prev) prev means previously taken element in lis okay
+
+so what if i take that element so 
+when  can i take any element when it is greater than my previous element
+
+take = 1 + f(ind+1 , ind) => since i am adding the length and not previous is my current index
+
+nottake = 0 + f(ind+1 , prev)
+
+return max(take  , nottake)
+
+
+
+code : 
+def get_longest_increasing_subsequence_length(arr, n, ind, prev_index, dp):
+    # Base condition
+    if ind == n:
+        return 0
+
+    if dp[ind][prev_index + 1] != -1:
+        return dp[ind][prev_index + 1]
+
+    not_take = 0 + get_longest_increasing_subsequence_length(arr, n, ind + 1, prev_index, dp)
+
+    take = 0
+
+    if prev_index == -1 or arr[ind] > arr[prev_index]:
+        take = 1 + get_longest_increasing_subsequence_length(arr, n, ind + 1, ind, dp)
+
+    dp[ind][prev_index + 1] = max(not_take, take)
+    return dp[ind][prev_index + 1]
+
+
+def longest_increasing_subsequence_length(arr):
+    n = len(arr)
+    dp = [[-1 for _ in range(n + 1)] for _ in range(n)]
+
+    return get_longest_increasing_subsequence_length(arr, n, 0, -1, dp)
+
+
+
+this will give tle so there is one better approach
+
+using 1d dp array
+dp[i] indicates the length of lis till that index right 
+
+dp = [[1] for _ in range(n)]
+for i in range(n):
+    for prev in range(i):   //checking for all previous elements starting from 0
+        if(arr[prev] < arr[i]):
+            dp[i] = max(dp[i] , dp[prev]+1)   //what this mean it indicates that i will take maximum of that current index 
+return max(dp)
+
+
+
+
+rules to think:
+1) think in terms of index so at any index i have two options
+2) either i take or i dont take
+3) i want max length so i will maximum of take and not take
+4) base case
