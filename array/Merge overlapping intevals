@@ -11,10 +11,10 @@ class Solution:
                 ans.append(curr)
         return ans
 
-inte :
-=> sort based on 0th index
-=> comapre it and store it
+# inte :
+# => sort based on 0th index
+# => comapre it and store it
 
-where i needed to help:
-=> how to compute and take it from two places 
-this was solved by always taking it from ans and then comparing it
+# where i needed to help:
+# => how to compute and take it from two places 
+# this was solved by always taking it from ans and then comparing it

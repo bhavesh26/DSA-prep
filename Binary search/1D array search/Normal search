@@ -12,7 +12,7 @@ class Solution:
                 return mid
         return -1
 
-find mid and compare it with target and return mid
-run in O(logn) time complexity
-binary search can be applied at places where it search space is sorted not necessary only arrays
-but in general wherever search space is sorted
+# find mid and compare it with target and return mid
+# run in O(logn) time complexity
+# binary search can be applied at places where it search space is sorted not necessary only arrays
+# but in general wherever search space is sorted

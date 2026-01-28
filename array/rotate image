@@ -9,12 +9,12 @@ class Solution:
             matrix[i] = matrix[i][::-1]
         
 
-intution
-=> take empty n*n array and map data as per need
-i , j = j , n-i-1
-=> not optimal
+# intution
+# => take empty n*n array and map data as per need
+# i , j = j , n-i-1
+# => not optimal
 
 
-what i learned:
-=> transpose ( efficient way to convert row to column)
-then take reverse to get required behaviour
+# what i learned:
+# => transpose ( efficient way to convert row to column)
+# then take reverse to get required behaviour

@@ -11,13 +11,13 @@ class Solution:
             stack.append(arr[i])
         return res
 
-Intution:
-=> traverse it from back it i find smaller element
-=> if i find that element on top it greater  i will pop until i find smaller element and that will be next smaller element
-arr = [1, 3, 2, 4]
-res = [-1, -1, -1 , -1]
-start with 4 so stack if empty res so that element is -1
-4 is added to stack 
-2 comes now and 2 is less than top of stack so directly assgn top to smallest next element
-so it just added to stack
-3 comes now it greater than stacks top so start poping it becomes smaller than assign top element
+# Intution:
+# => traverse it from back it i find smaller element
+# => if i find that element on top it greater  i will pop until i find smaller element and that will be next smaller element
+# arr = [1, 3, 2, 4]
+# res = [-1, -1, -1 , -1]
+# start with 4 so stack if empty res so that element is -1
+# 4 is added to stack 
+# 2 comes now and 2 is less than top of stack so directly assgn top to smallest next element
+# so it just added to stack
+# 3 comes now it greater than stacks top so start poping it becomes smaller than assign top element

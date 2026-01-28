@@ -18,9 +18,9 @@ class Solution:
             return False
         return True
 
-Intution and logic behind this:
+# Intution and logic behind this:
 
-=> only add open brackets to stack
-=> if there is close bracket pop out the top and check whether open is matching with closing or not
-=> if there is something in stack that means its not isBalanced
-=> return true if stack is empty and no false is returned from inside
+# => only add open brackets to stack
+# => if there is close bracket pop out the top and check whether open is matching with closing or not
+# => if there is something in stack that means its not isBalanced
+# => return true if stack is empty and no false is returned from inside

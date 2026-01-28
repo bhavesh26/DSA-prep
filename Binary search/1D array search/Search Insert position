@@ -1,8 +1,8 @@
-Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+# Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
-You must write an algorithm with O(log n) runtime complexity.
+# You must write an algorithm with O(log n) runtime complexity.
 
-code : 
+# code : 
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         start = 0
@@ -17,5 +17,5 @@ class Solution:
                 return mid
         return start
 
-similar to simple search it tried to find index in array if its found directly return that
-but if its not  present it already reached a point wherever it should have been found so either return start or end
+# similar to simple search it tried to find index in array if its found directly return that
+# but if its not  present it already reached a point wherever it should have been found so either return start or end

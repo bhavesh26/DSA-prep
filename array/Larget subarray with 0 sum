@@ -1,46 +1,46 @@
-=> Desi code
-class Solution:
-    def maxLen(self, arr):
-        pre = []
-        maxi = 0
-        s = 0
-        for index, value in enumerate(arr):
-            s+=value
-            if(s==0):
-                maxi = max(maxi , index+1)
-            pre.append(s)
+# => Desi code
+# class Solution:
+#     def maxLen(self, arr):
+#         pre = []
+#         maxi = 0
+#         s = 0
+#         for index, value in enumerate(arr):
+#             s+=value
+#             if(s==0):
+#                 maxi = max(maxi , index+1)
+#             pre.append(s)
             
-        mp = {}
-        for index, value in enumerate(pre):
-            if(value in mp):
-                mp[value].append(index)
-            else:
-                mp[value] = [index]
+#         mp = {}
+#         for index, value in enumerate(pre):
+#             if(value in mp):
+#                 mp[value].append(index)
+#             else:
+#                 mp[value] = [index]
         
-        # print(mp , pre)
-        for i in mp:
-            if(len(mp[i])>1):
-                maxi = max(maxi , max(mp[i])- min(mp[i]))
-        return maxi
+#         # print(mp , pre)
+#         for i in mp:
+#             if(len(mp[i])>1):
+#                 maxi = max(maxi , max(mp[i])- min(mp[i]))
+#         return maxi
 
-=> optimised version of the same code
-            prefix_sum = 0
-            max_length = 0
-            hash_map = {}
+# => optimised version of the same code
+            # prefix_sum = 0
+            # max_length = 0
+            # hash_map = {}
         
-            for i, num in enumerate(arr):
-                prefix_sum += num
+            # for i, num in enumerate(arr):
+            #     prefix_sum += num
         
-                if prefix_sum == 0:
-                    max_length = i + 1
+            #     if prefix_sum == 0:
+            #         max_length = i + 1
                 
-                if prefix_sum in hash_map:
-                    max_length = max(max_length, i - hash_map[prefix_sum])
-                else:
-                    hash_map[prefix_sum] = i  # Store the first occurrence
+            #     if prefix_sum in hash_map:
+            #         max_length = max(max_length, i - hash_map[prefix_sum])
+            #     else:
+            #         hash_map[prefix_sum] = i  # Store the first occurrence
         
-            return max_length
+            # return max_length
 
-=> intutuion 
-have  prefix sum and where ever prefix sum is zero update maxi
-if prefix sum is not zero store index if same prefix has occured before
+# => intutuion 
+# have  prefix sum and where ever prefix sum is zero update maxi
+# if prefix sum is not zero store index if same prefix has occured before
